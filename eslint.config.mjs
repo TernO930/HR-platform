@@ -17,8 +17,7 @@ export default [
     pluginReactConfig,
     {
         rules: {
-            semi: 'always',
-            // 'prettier/prettier': ['error', { semi: false }],
+            semi: 'off',
         },
     },
 ];

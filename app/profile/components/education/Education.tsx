@@ -1,8 +1,8 @@
 import { Field } from 'react-final-form';
 import { EditableField, FieldType } from '../field/Field';
 import {
-    type Education as TEducation,
     EducationLevel,
+    type Education as TEducation,
 } from '@/app/models/profile/profile';
 import { Button, Checkbox, Icon, SelectOption } from '@gravity-ui/uikit';
 import { FieldArray } from 'react-final-form-arrays';

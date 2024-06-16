@@ -1,7 +1,7 @@
 'use client';
 
 import block from 'bem-cn-lite';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
 import { Field, Form } from 'react-final-form';
 import { EditableField, FieldType } from '../components/field/Field';
 import { BrandButton } from '@/app/components/BrandButton';
@@ -11,7 +11,7 @@ import './page.scss';
 const b = block('authorize');
 
 export default function Page() {
-    const router = useRouter();
+    // const router = useRouter();
 
     return (
         <Form

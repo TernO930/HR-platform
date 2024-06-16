@@ -3,7 +3,7 @@
 import { Field, Form } from 'react-final-form';
 import { Profile } from '../models/profile/profile';
 import block from 'bem-cn-lite';
-import { FieldType, EditableField } from './components/field/Field';
+import { EditableField, FieldType } from './components/field/Field';
 import { BrandButton } from '../components/BrandButton';
 import { Essentials } from './components/essentials/Essentials';
 import { Education } from './components/education/Education';
