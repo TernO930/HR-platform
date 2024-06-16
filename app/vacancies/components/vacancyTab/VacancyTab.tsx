@@ -1,3 +1,5 @@
+'use client';
+
 import { employmentFormText } from '@/app/utils/vacancy';
 import { Button, Label } from '@gravity-ui/uikit';
 import block from 'bem-cn-lite';
@@ -42,7 +44,7 @@ export const VacancyTab = ({
             className={b({ block, 'no-link': noLink }, className)}
             onClick={() => {
                 if (!noLink) {
-                    router.push(`${Routes.Vacancies}/${id}`);
+                    router.push(`${Routes.Vacancies}/vacancy?id=${id}`);
                 }
             }}
         >

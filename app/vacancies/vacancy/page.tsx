@@ -9,6 +9,7 @@ import { Label } from '@gravity-ui/uikit';
 import { ContactForm } from './components/contactForm';
 import { useState } from 'react';
 import { AccompanyingLetter } from '../components/accompanyingLetter/AccampanyingLetter';
+import { useSearchParams } from 'next/navigation';
 
 const b = block('vacancy');
 
@@ -34,18 +35,15 @@ const sample: VacancyFull = {
     ),
 };
 
-export default function VacancyPage({
-    params: { vacancyId },
-}: {
-    params: { vacancyId: string };
-}) {
+export default function VacancyPage() {
     const [showLetter, setShowLetter] = useState(false);
+    const queryParams = useSearchParams();
 
     return (
         <div className={b()}>
             <VacancyTab
                 {...sample}
-                id={vacancyId}
+                id={queryParams.get('id')}
                 onSelectedSwitch={() => {}}
                 noLink
                 onConfirm={() => {
