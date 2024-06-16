@@ -45,6 +45,7 @@ export default function VacancyPage({
         <div className={b()}>
             <VacancyTab
                 {...sample}
+                id={vacancyId}
                 onSelectedSwitch={() => {}}
                 noLink
                 onConfirm={() => {

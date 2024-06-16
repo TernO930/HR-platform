@@ -3,7 +3,6 @@ import { Field } from 'react-final-form';
 import { EditableField, FieldType } from '../field/Field';
 import { DateField } from '../field/DateField';
 import { type SelectOption } from '@gravity-ui/uikit';
-import { Fragment } from 'react';
 import block from 'bem-cn-lite';
 
 import './Essentials.scss';
@@ -19,7 +18,6 @@ const genderSelectOptions: SelectOption<Gender>[] = [
         value: Gender.Female,
         content: 'Женский',
     },
-    ,
     {
         value: Gender.Unspecified,
         content: 'Не указано',

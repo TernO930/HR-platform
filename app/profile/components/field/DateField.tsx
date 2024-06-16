@@ -1,5 +1,5 @@
 import { DatePicker } from '@gravity-ui/date-components';
-import { dateTime, dateTimeParse } from '@gravity-ui/date-utils';
+import { dateTimeParse } from '@gravity-ui/date-utils';
 
 export type DateFieldProps = {
     value?: string;

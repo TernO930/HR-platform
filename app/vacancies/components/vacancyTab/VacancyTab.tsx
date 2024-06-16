@@ -1,4 +1,3 @@
-import { EmploymentForm } from '@/app/models/vacancy/employment-form';
 import { employmentFormText } from '@/app/utils/vacancy';
 import { Button, Label } from '@gravity-ui/uikit';
 import block from 'bem-cn-lite';
@@ -8,8 +7,6 @@ import './VacancyTab.scss';
 import type { Vacancy } from '@/app/models/vacancy';
 import { Routes } from '@/app/constants/routes';
 import { useRouter } from 'next/navigation';
-import { BrandButton } from '@/app/components/BrandButton';
-import { useState } from 'react';
 
 const b = block('vacancy-tab');
 

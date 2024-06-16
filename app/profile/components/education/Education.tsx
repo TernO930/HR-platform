@@ -23,7 +23,6 @@ const levelSelectOptions: SelectOption<EducationLevel>[] = [
         value: EducationLevel.Master,
         content: 'Магистратура',
     },
-    ,
     {
         value: EducationLevel.Speciality,
         content: 'Специалитет',

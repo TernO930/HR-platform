@@ -12,7 +12,6 @@ import { WorkExperience } from '../components/workExperience/WorkExperience';
 import { Skills } from '../components/skills/Skills';
 import './page.scss';
 import { Avatar } from '../components/avatar/Avatar';
-import { Button } from '@gravity-ui/uikit';
 
 const onSubmit = (data: Profile) => {
     console.log(data);
