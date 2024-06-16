@@ -24,7 +24,7 @@ export const ContactForm = ({ onConfirm }: ContactFormProps) => {
                 }}
                 placeholder="Что вас интересует?"
                 error={errored}
-                errorMessage="Это поле должно бвть заполнено"
+                errorMessage="Это поле должно быть заполнено"
                 minRows={10}
             />
             <BrandButton

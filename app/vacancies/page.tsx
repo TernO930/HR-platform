@@ -15,13 +15,13 @@ const sample: Omit<VacancyTabProps, 'onConfirm'>[] = Array.from({
     length: 10,
 }).map((_, index) => ({
     id: index.toString(),
-    title: 'Job title',
+    title: 'Название вакансии',
     skills: ['Skill 1', 'Skill 2', 'Skill 3'],
-    salary: 'от 100к в нс',
-    experience: '12 years in Azakaban',
+    salary: 'от 100 тысяч',
+    experience: '3 года',
     employmentForms: [EmploymentForm.FullTime, EmploymentForm.Remote],
     selected: Math.floor(Math.random() * 3 - 1) > 0,
-    places: ['Moscow, St Petersburg'],
+    places: ['Москва, Санкт-Петербург'],
     onSelectedSwitch: () => {},
 }));
 

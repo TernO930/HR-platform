@@ -7,26 +7,30 @@ import block from 'bem-cn-lite';
 import './page.scss';
 import { Label } from '@gravity-ui/uikit';
 import { ContactForm } from './components/contactForm';
+import { useState } from 'react';
+import { AccompanyingLetter } from '../components/accompanyingLetter/AccampanyingLetter';
 
 const b = block('vacancy');
 
 const sample: VacancyFull = {
     id: 'RandomIndex',
-    title: 'Job title',
-    salary: 'от 100к в нс',
-    experience: '12 years in Azakaban',
+    title: 'Название',
+    salary: 'от 100 тысяч',
+    experience: '1 год',
     employmentForms: [EmploymentForm.FullTime, EmploymentForm.Remote],
     selected: Math.floor(Math.random() * 3 - 1) > 0,
 
-    places: ['Moscow, St Petersburg'],
+    places: ['Москва, Санкт-Петербург'],
     description:
         'Some long long description.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    expectations: Array.from({ length: 10 }).map(
-        (_, id) => `Expectation blah blah blah blah blah blah ${id}`
+    expectations: Array.from({ length: 7 }).map(
+        (_, id) =>
+            `Ожидание Lorem ipsum dolor sit amet, consectetur adipiscing elit ${id}`
     ),
-    skills: Array.from({ length: 10 }).map((_, id) => `Skill ${id}`),
-    offers: Array.from({ length: 10 }).map(
-        (_, id) => `Expectation blah blah blah blah blah blah ${id}`
+    skills: Array.from({ length: 5 }).map((_, id) => `Skill ${id}`),
+    offers: Array.from({ length: 6 }).map(
+        (_, id) =>
+            `Предлашаем Lorem ipsum dolor sit amet, consectetur adipiscing elit ${id}`
     ),
 };
 
@@ -35,9 +39,19 @@ export default function VacancyPage({
 }: {
     params: { vacancyId: string };
 }) {
+    const [showLetter, setShowLetter] = useState(false);
+
     return (
         <div className={b()}>
-            <VacancyTab {...sample} onSelectedSwitch={() => {}} noLink />
+            <VacancyTab
+                {...sample}
+                onSelectedSwitch={() => {}}
+                noLink
+                onConfirm={() => {
+                    setShowLetter(!showLetter);
+                }}
+            />
+            {showLetter && <AccompanyingLetter onConfirm={() => {}} />}
             <div className={b('details')}>
                 <div className={b('info', { text: true })}>
                     <p>{sample.description}</p>
