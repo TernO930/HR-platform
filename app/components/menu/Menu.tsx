@@ -36,7 +36,7 @@ export const Menu = () => {
     return (
         <div className={b()}>
             <div className={b('logo')}>
-                <img src="/images/logo.svg" alt="Logo" />
+                <img src="/HR-platform/images/logo.svg" alt="Logo" />
             </div>
             <nav className={b('navigation')}>
                 <NavElement route={Routes.Main} pathname={pathname} />
