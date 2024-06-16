@@ -34,7 +34,7 @@ export const User = ({ authorized }: { authorized?: boolean }) => {
         <Link className={b()} href={Routes.Profile}>
             <Avatar
                 className={b('avatar')}
-                imgUrl="/images/user-avatar-default.svg"
+                imgUrl="/HR-platform/images/user-avatar-default.svg"
                 size="l"
                 view="outlined"
             />

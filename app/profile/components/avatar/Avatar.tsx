@@ -5,7 +5,7 @@ import './Avatar.scss';
 const b = block('profile-user-avatar');
 
 export const Avatar = ({
-    avatarUrl = '/images/user-avatar-default.svg',
+    avatarUrl = '/HR-platform/images/user-avatar-default.svg',
 }: {
     avatarUrl?: string;
     edit?: boolean;
