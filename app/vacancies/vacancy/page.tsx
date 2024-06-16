@@ -7,7 +7,7 @@ import block from 'bem-cn-lite';
 import './page.scss';
 import { Label } from '@gravity-ui/uikit';
 import { ContactForm } from './components/contactForm';
-import { useState } from 'react';
+import { Fragment, Suspense, useState } from 'react';
 import { AccompanyingLetter } from '../components/accompanyingLetter/AccampanyingLetter';
 import { useSearchParams } from 'next/navigation';
 
@@ -35,15 +35,15 @@ const sample: VacancyFull = {
     ),
 };
 
-export default function VacancyPage() {
+const PageContent = () => {
     const [showLetter, setShowLetter] = useState(false);
     const queryParams = useSearchParams();
 
     return (
-        <div className={b()}>
+        <Fragment>
             <VacancyTab
                 {...sample}
-                id={queryParams.get('id')}
+                id={queryParams.get('id') ?? '0'}
                 onSelectedSwitch={() => {}}
                 noLink
                 onConfirm={() => {
@@ -88,6 +88,16 @@ export default function VacancyPage() {
                 </h3>
                 <ContactForm onConfirm={console.log} />
             </div>
+        </Fragment>
+    );
+};
+
+export default function VacancyPage() {
+    return (
+        <div className={b()}>
+            <Suspense>
+                <PageContent />
+            </Suspense>
         </div>
     );
 }
