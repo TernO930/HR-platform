@@ -1,24 +1,24 @@
 'use client';
 
 import { Field, Form } from 'react-final-form';
-import { Profile } from '../models/profile/profile';
+import { Profile } from '../../models/profile/profile';
 import block from 'bem-cn-lite';
-import { FieldType, EditableField } from './components/field/Field';
-import { BrandButton } from '../components/BrandButton';
-import { Essentials } from './components/essentials/Essentials';
-import { Education } from './components/education/Education';
+import { FieldType, EditableField } from '../components/field/Field';
+import { BrandButton } from '../../components/BrandButton';
+import { Essentials } from '../components/essentials/Essentials';
+import { Education } from '../components/education/Education';
 import arrayMutators from 'final-form-arrays';
-import { WorkExperience } from './components/workExperience/WorkExperience';
-import { Skills } from './components/skills/Skills';
+import { WorkExperience } from '../components/workExperience/WorkExperience';
+import { Skills } from '../components/skills/Skills';
 import './page.scss';
-import { Avatar } from './components/avatar/Avatar';
+import { Avatar } from '../components/avatar/Avatar';
 import { Button } from '@gravity-ui/uikit';
 
 const onSubmit = (data: Profile) => {
     console.log(data);
 };
 
-const b = block('profile');
+const b = block('profile-edit');
 
 export default function Page() {
     return (
@@ -61,14 +61,21 @@ export default function Page() {
                         <h2 className={b('header')}>Ключевые навыки</h2>
                         <Skills />
                     </div>
-                    <div className={b('actions')}>
-                        <Button view="normal" size="l" onClick={handleSubmit}>
-                            Отменить
-                        </Button>
-                        <BrandButton onClick={handleSubmit}>
-                            Подтвердить
-                        </BrandButton>
+                    <div className={b('section', { skills: true })}>
+                        <h2 className={b('header')}>Пароль</h2>
+                        <Field<string> name="password">
+                            {(props) => (
+                                <EditableField
+                                    type={FieldType.Line}
+                                    onUpdate={props.input.onChange}
+                                    inputType="password"
+                                />
+                            )}
+                        </Field>
                     </div>
+                    <BrandButton onClick={handleSubmit}>
+                        Зарегестрироваться
+                    </BrandButton>
                 </div>
             )}
         />

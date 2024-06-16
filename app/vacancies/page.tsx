@@ -7,6 +7,7 @@ import block from 'bem-cn-lite';
 import './page.scss';
 import { useState } from 'react';
 import { AccompanyingLetter } from './components/accompanyingLetter/AccampanyingLetter';
+import { ViewMenu } from './components/viewMenu/ViewMenu';
 
 const b = block('vacancies-page');
 
@@ -29,36 +30,39 @@ export default function Page() {
     const [block, setBlock] = useState(false);
 
     return (
-        <div className={b()}>
-            {sample.map((vacancy, index) => (
-                <VacancyTab
-                    {...vacancy}
-                    key={vacancy.id}
-                    onConfirm={() => {
-                        if (letterId === index) {
-                            return setLetterId(undefined);
-                        }
-                        setLetterId(index);
-                    }}
-                    confirmed={letterId === index}
-                    block={block}
-                    className={b('vacancy', { inline: !block })}
-                />
-            ))}
-            {letterId !== undefined && (
-                <AccompanyingLetter
-                    className={b('letter')}
-                    onConfirm={() => {
-                        setLetterId(undefined);
-                    }}
-                    style={{
-                        gridRowStart:
-                            Math.ceil((letterId + 1) / (block ? 3 : 1)) + 1,
-                        gridRowEnd:
-                            Math.ceil((letterId + 1) / (block ? 3 : 1)) + 2,
-                    }}
-                />
-            )}
+        <div className={b('container')}>
+            <ViewMenu onChange={setBlock} block={block} className={b('view')} />
+            <div className={b()}>
+                {sample.map((vacancy, index) => (
+                    <VacancyTab
+                        {...vacancy}
+                        key={vacancy.id}
+                        onConfirm={() => {
+                            if (letterId === index) {
+                                return setLetterId(undefined);
+                            }
+                            setLetterId(index);
+                        }}
+                        confirmed={letterId === index}
+                        block={block}
+                        className={b('vacancy', { inline: !block })}
+                    />
+                ))}
+                {letterId !== undefined && (
+                    <AccompanyingLetter
+                        className={b('letter')}
+                        onConfirm={() => {
+                            setLetterId(undefined);
+                        }}
+                        style={{
+                            gridRowStart:
+                                Math.ceil((letterId + 1) / (block ? 3 : 1)) + 1,
+                            gridRowEnd:
+                                Math.ceil((letterId + 1) / (block ? 3 : 1)) + 2,
+                        }}
+                    />
+                )}
+            </div>
         </div>
     );
 }

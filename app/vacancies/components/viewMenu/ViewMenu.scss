@@ -1,0 +1,20 @@
+.view-menu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--g-spacing-3);
+    padding: var(--g-spacing-3);
+    border-radius: 10px;
+    background-color: var(--g-color-base-background);
+
+    &__block, &__inline {
+        svg {
+            fill: var(--g-color-text-secondary);
+        }
+
+        &_active {
+            svg {
+                fill: black;
+            }
+        }
+    }
+}

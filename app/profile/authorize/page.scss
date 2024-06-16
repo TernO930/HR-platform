@@ -1,0 +1,9 @@
+.authorize {
+    display: flex;
+    flex-direction: column;
+    gap: var(--g-spacing-5);
+
+    border-radius: 10px;
+    padding: var(--g-spacing-6);
+    background-color: var(--g-color-base-background);
+}

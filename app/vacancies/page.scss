@@ -16,4 +16,14 @@
             grid-column-end: 4;
         }
     }
+
+    &__container {
+        position: relative;
+    }
+
+    &__view {
+        position: absolute;
+        right: calc(-240px + var(--g-spacing-4));
+        top: 0;
+    }
 }

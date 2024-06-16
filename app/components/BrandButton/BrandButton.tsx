@@ -12,7 +12,7 @@ export const BrandButton = ({
     className,
 }: {
     children: React.ReactNode;
-    onClick: () => void;
+    onClick?: () => void;
     loading?: boolean;
     className?: string;
 }) => {

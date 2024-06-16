@@ -32,4 +32,16 @@
         @include text-body-1();
         color: var(--g-color-text-secondary);
     }
+
+    &__actions {
+        display: flex;
+        gap: var(--g-spacing-3);
+    }
+
+    &__sign-up {
+        .g-button__text {
+            @include text-body-2();
+            margin: auto;
+        }
+    }
 }

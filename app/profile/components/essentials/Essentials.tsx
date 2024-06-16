@@ -136,6 +136,7 @@ export const Essentials = () => {
                             type={FieldType.Line}
                             value={props.input.value}
                             onUpdate={props.input.onChange}
+                            inputType="tel"
                         />
                     )}
                 </Field>
@@ -148,6 +149,7 @@ export const Essentials = () => {
                             type={FieldType.Line}
                             value={props.input.value}
                             onUpdate={props.input.onChange}
+                            inputType="email"
                         />
                     )}
                 </Field>

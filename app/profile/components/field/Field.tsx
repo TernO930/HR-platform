@@ -13,6 +13,15 @@ export type FieldProps = (
           value?: string;
           onUpdate: (value: string) => void;
           minRows?: number;
+          inputType?:
+              | 'number'
+              | 'search'
+              | 'text'
+              | 'tel'
+              | 'url'
+              | 'email'
+              | 'password'
+              | undefined;
       }
     | {
           type: FieldType.Select;
@@ -33,6 +42,7 @@ export const Field = (props: FieldProps) => {
                 <TextInput
                     defaultValue={props.value}
                     onUpdate={props.onUpdate}
+                    type={props.inputType}
                 />
             );
         }
